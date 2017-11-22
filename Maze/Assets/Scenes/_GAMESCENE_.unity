@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc3fd71eaa8e46aca38e00957d00d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileGO: {fileID: 1604953745605188, guid: c631ecc0272dc46cebb7a4ba84a141a6, type: 2}
+  tileGO: {fileID: 1582559615685984, guid: f966cfe481026486183d85c1346c9efa, type: 2}
 --- !u!4 &1099774174
 Transform:
   m_ObjectHideFlags: 0
@@ -291,10 +291,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1882501136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.19080894, y: 0, z: 0, w: 0.9816273}
+  m_LocalPosition: {x: 10, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22, y: 0, z: 0}
