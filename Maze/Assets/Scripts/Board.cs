@@ -80,10 +80,6 @@ public class Board {
 				int x = currentTile.X - nextTile.X;
 				int z = currentTile.Z - nextTile.Z;
 
-				string s = x + " " + z;
-
-				Debug.Log (s);
-
 				if (x > 0) {
 					currentTile.hasWestWall = false;
 					nextTile.hasEastWall = false;

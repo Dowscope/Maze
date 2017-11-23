@@ -10,6 +10,9 @@ public class BoardController : MonoBehaviour {
 	// Get reference to the tile prefab
 	public GameObject tileGO;
 
+	// Get reference to the player prefab
+	public GameObject playerGO;
+
 	// Array of gameobjects for each tile
 	GameObject[,] goContainer;
 	Tile[,] tileData;
@@ -23,7 +26,7 @@ public class BoardController : MonoBehaviour {
 		for (int z = 0; z < board.Height; z++) {
 			for (int x = 0; x < board.Width; x++) {
 				goContainer[x,z] = Instantiate (tileGO,
-												new Vector3 (x, 0, z),
+												new Vector3 (x, -0.5f, z),
 												Quaternion.identity,
 												this.transform) 
 												as GameObject;
@@ -32,6 +35,8 @@ public class BoardController : MonoBehaviour {
 				tileData [x, z] = board.getTileAt (x, z);
 			}
 		}
+
+		Instantiate (playerGO, new Vector3(0, 1, 0), Quaternion.identity);
 
 		board.newBoard ();
 	}
