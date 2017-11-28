@@ -23,7 +23,6 @@ public class Board {
 
 	Tile startingTile;
 	Tile currentTile;
-	Tile previousTile;
 
 	// We should have a container for all the tiles.
 	Tile[,] tileContainer;
@@ -61,8 +60,6 @@ public class Board {
 
 		currentTile = startingTile;
 		currentTile.setCurrentTile (true);
-
-		previousTile = startingTile;
 
 		setTileNeighbours ();
 		createBoard ();

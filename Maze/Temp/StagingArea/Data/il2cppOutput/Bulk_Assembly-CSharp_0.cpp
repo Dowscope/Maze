@@ -78,6 +78,7 @@ extern const RuntimeMethod* Object_Instantiate_TisGameObject_t1756533147_m306485
 extern Il2CppCodeGenString* _stringLiteral3645121135;
 extern Il2CppCodeGenString* _stringLiteral372029427;
 extern const uint32_t BoardController_Start_m2403867529_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2126706964;
 extern Il2CppCodeGenString* _stringLiteral1625084853;
 extern Il2CppCodeGenString* _stringLiteral217700537;
 extern Il2CppCodeGenString* _stringLiteral1639333311;
@@ -553,14 +554,12 @@ public:
 	Tile_t2729441780 * ___startingTile_2;
 	// Tile Board::currentTile
 	Tile_t2729441780 * ___currentTile_3;
-	// Tile Board::previousTile
-	Tile_t2729441780 * ___previousTile_4;
 	// Tile[0...,0...] Board::tileContainer
-	TileU5B0___U2C0___U5D_t1358904254* ___tileContainer_5;
+	TileU5B0___U2C0___U5D_t1358904254* ___tileContainer_4;
 	// System.Collections.Stack Board::visitedTiles
-	Stack_t1043988394 * ___visitedTiles_6;
+	Stack_t1043988394 * ___visitedTiles_5;
 	// System.Boolean Board::isMapCreated
-	bool ___isMapCreated_7;
+	bool ___isMapCreated_6;
 
 public:
 	inline static int32_t get_offset_of_width_0() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___width_0)); }
@@ -597,39 +596,30 @@ public:
 		Il2CppCodeGenWriteBarrier((&___currentTile_3), value);
 	}
 
-	inline static int32_t get_offset_of_previousTile_4() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___previousTile_4)); }
-	inline Tile_t2729441780 * get_previousTile_4() const { return ___previousTile_4; }
-	inline Tile_t2729441780 ** get_address_of_previousTile_4() { return &___previousTile_4; }
-	inline void set_previousTile_4(Tile_t2729441780 * value)
+	inline static int32_t get_offset_of_tileContainer_4() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___tileContainer_4)); }
+	inline TileU5B0___U2C0___U5D_t1358904254* get_tileContainer_4() const { return ___tileContainer_4; }
+	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileContainer_4() { return &___tileContainer_4; }
+	inline void set_tileContainer_4(TileU5B0___U2C0___U5D_t1358904254* value)
 	{
-		___previousTile_4 = value;
-		Il2CppCodeGenWriteBarrier((&___previousTile_4), value);
+		___tileContainer_4 = value;
+		Il2CppCodeGenWriteBarrier((&___tileContainer_4), value);
 	}
 
-	inline static int32_t get_offset_of_tileContainer_5() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___tileContainer_5)); }
-	inline TileU5B0___U2C0___U5D_t1358904254* get_tileContainer_5() const { return ___tileContainer_5; }
-	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileContainer_5() { return &___tileContainer_5; }
-	inline void set_tileContainer_5(TileU5B0___U2C0___U5D_t1358904254* value)
+	inline static int32_t get_offset_of_visitedTiles_5() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___visitedTiles_5)); }
+	inline Stack_t1043988394 * get_visitedTiles_5() const { return ___visitedTiles_5; }
+	inline Stack_t1043988394 ** get_address_of_visitedTiles_5() { return &___visitedTiles_5; }
+	inline void set_visitedTiles_5(Stack_t1043988394 * value)
 	{
-		___tileContainer_5 = value;
-		Il2CppCodeGenWriteBarrier((&___tileContainer_5), value);
+		___visitedTiles_5 = value;
+		Il2CppCodeGenWriteBarrier((&___visitedTiles_5), value);
 	}
 
-	inline static int32_t get_offset_of_visitedTiles_6() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___visitedTiles_6)); }
-	inline Stack_t1043988394 * get_visitedTiles_6() const { return ___visitedTiles_6; }
-	inline Stack_t1043988394 ** get_address_of_visitedTiles_6() { return &___visitedTiles_6; }
-	inline void set_visitedTiles_6(Stack_t1043988394 * value)
+	inline static int32_t get_offset_of_isMapCreated_6() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___isMapCreated_6)); }
+	inline bool get_isMapCreated_6() const { return ___isMapCreated_6; }
+	inline bool* get_address_of_isMapCreated_6() { return &___isMapCreated_6; }
+	inline void set_isMapCreated_6(bool value)
 	{
-		___visitedTiles_6 = value;
-		Il2CppCodeGenWriteBarrier((&___visitedTiles_6), value);
-	}
-
-	inline static int32_t get_offset_of_isMapCreated_7() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___isMapCreated_7)); }
-	inline bool get_isMapCreated_7() const { return ___isMapCreated_7; }
-	inline bool* get_address_of_isMapCreated_7() { return &___isMapCreated_7; }
-	inline void set_isMapCreated_7(bool value)
-	{
-		___isMapCreated_7 = value;
+		___isMapCreated_6 = value;
 	}
 };
 
@@ -1218,12 +1208,18 @@ public:
 	Board_t2083606692 * ___board_2;
 	// UnityEngine.GameObject BoardController::tileGO
 	GameObject_t1756533147 * ___tileGO_3;
-	// UnityEngine.GameObject BoardController::playerGO
-	GameObject_t1756533147 * ___playerGO_4;
+	// UnityEngine.GameObject BoardController::playerGOPreFab
+	GameObject_t1756533147 * ___playerGOPreFab_4;
+	// UnityEngine.GameObject BoardController::lightGOPreFab
+	GameObject_t1756533147 * ___lightGOPreFab_5;
+	// UnityEngine.GameObject BoardController::player
+	GameObject_t1756533147 * ___player_6;
+	// UnityEngine.GameObject BoardController::light
+	GameObject_t1756533147 * ___light_7;
 	// UnityEngine.GameObject[0...,0...] BoardController::goContainer
-	GameObjectU5B0___U2C0___U5D_t3057952155* ___goContainer_5;
+	GameObjectU5B0___U2C0___U5D_t3057952155* ___goContainer_8;
 	// Tile[0...,0...] BoardController::tileData
-	TileU5B0___U2C0___U5D_t1358904254* ___tileData_6;
+	TileU5B0___U2C0___U5D_t1358904254* ___tileData_9;
 
 public:
 	inline static int32_t get_offset_of_board_2() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___board_2)); }
@@ -1244,31 +1240,58 @@ public:
 		Il2CppCodeGenWriteBarrier((&___tileGO_3), value);
 	}
 
-	inline static int32_t get_offset_of_playerGO_4() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___playerGO_4)); }
-	inline GameObject_t1756533147 * get_playerGO_4() const { return ___playerGO_4; }
-	inline GameObject_t1756533147 ** get_address_of_playerGO_4() { return &___playerGO_4; }
-	inline void set_playerGO_4(GameObject_t1756533147 * value)
+	inline static int32_t get_offset_of_playerGOPreFab_4() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___playerGOPreFab_4)); }
+	inline GameObject_t1756533147 * get_playerGOPreFab_4() const { return ___playerGOPreFab_4; }
+	inline GameObject_t1756533147 ** get_address_of_playerGOPreFab_4() { return &___playerGOPreFab_4; }
+	inline void set_playerGOPreFab_4(GameObject_t1756533147 * value)
 	{
-		___playerGO_4 = value;
-		Il2CppCodeGenWriteBarrier((&___playerGO_4), value);
+		___playerGOPreFab_4 = value;
+		Il2CppCodeGenWriteBarrier((&___playerGOPreFab_4), value);
 	}
 
-	inline static int32_t get_offset_of_goContainer_5() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___goContainer_5)); }
-	inline GameObjectU5B0___U2C0___U5D_t3057952155* get_goContainer_5() const { return ___goContainer_5; }
-	inline GameObjectU5B0___U2C0___U5D_t3057952155** get_address_of_goContainer_5() { return &___goContainer_5; }
-	inline void set_goContainer_5(GameObjectU5B0___U2C0___U5D_t3057952155* value)
+	inline static int32_t get_offset_of_lightGOPreFab_5() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___lightGOPreFab_5)); }
+	inline GameObject_t1756533147 * get_lightGOPreFab_5() const { return ___lightGOPreFab_5; }
+	inline GameObject_t1756533147 ** get_address_of_lightGOPreFab_5() { return &___lightGOPreFab_5; }
+	inline void set_lightGOPreFab_5(GameObject_t1756533147 * value)
 	{
-		___goContainer_5 = value;
-		Il2CppCodeGenWriteBarrier((&___goContainer_5), value);
+		___lightGOPreFab_5 = value;
+		Il2CppCodeGenWriteBarrier((&___lightGOPreFab_5), value);
 	}
 
-	inline static int32_t get_offset_of_tileData_6() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___tileData_6)); }
-	inline TileU5B0___U2C0___U5D_t1358904254* get_tileData_6() const { return ___tileData_6; }
-	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileData_6() { return &___tileData_6; }
-	inline void set_tileData_6(TileU5B0___U2C0___U5D_t1358904254* value)
+	inline static int32_t get_offset_of_player_6() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___player_6)); }
+	inline GameObject_t1756533147 * get_player_6() const { return ___player_6; }
+	inline GameObject_t1756533147 ** get_address_of_player_6() { return &___player_6; }
+	inline void set_player_6(GameObject_t1756533147 * value)
 	{
-		___tileData_6 = value;
-		Il2CppCodeGenWriteBarrier((&___tileData_6), value);
+		___player_6 = value;
+		Il2CppCodeGenWriteBarrier((&___player_6), value);
+	}
+
+	inline static int32_t get_offset_of_light_7() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___light_7)); }
+	inline GameObject_t1756533147 * get_light_7() const { return ___light_7; }
+	inline GameObject_t1756533147 ** get_address_of_light_7() { return &___light_7; }
+	inline void set_light_7(GameObject_t1756533147 * value)
+	{
+		___light_7 = value;
+		Il2CppCodeGenWriteBarrier((&___light_7), value);
+	}
+
+	inline static int32_t get_offset_of_goContainer_8() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___goContainer_8)); }
+	inline GameObjectU5B0___U2C0___U5D_t3057952155* get_goContainer_8() const { return ___goContainer_8; }
+	inline GameObjectU5B0___U2C0___U5D_t3057952155** get_address_of_goContainer_8() { return &___goContainer_8; }
+	inline void set_goContainer_8(GameObjectU5B0___U2C0___U5D_t3057952155* value)
+	{
+		___goContainer_8 = value;
+		Il2CppCodeGenWriteBarrier((&___goContainer_8), value);
+	}
+
+	inline static int32_t get_offset_of_tileData_9() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___tileData_9)); }
+	inline TileU5B0___U2C0___U5D_t1358904254* get_tileData_9() const { return ___tileData_9; }
+	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileData_9() { return &___tileData_9; }
+	inline void set_tileData_9(TileU5B0___U2C0___U5D_t1358904254* value)
+	{
+		___tileData_9 = value;
+		Il2CppCodeGenWriteBarrier((&___tileData_9), value);
 	}
 };
 
@@ -1570,16 +1593,22 @@ extern "C"  String_t* String_Concat_m3881798623 (RuntimeObject * __this /* stati
 extern "C"  void Object_set_name_m1458854879 (Object_t1021602117 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion)
 #define Object_Instantiate_TisGameObject_t1756533147_m3064851704(__this /* static, unused */, p0, p1, p2, method) ((  GameObject_t1756533147 * (*) (RuntimeObject * /* static, unused */, GameObject_t1756533147 *, Vector3_t2243707580 , Quaternion_t4030073918 , const RuntimeMethod*))Object_Instantiate_TisRuntimeObject_m3829784634_gshared)(__this /* static, unused */, p0, p1, p2, method)
-// System.Void Board::newBoard()
-extern "C"  void Board_newBoard_m3991470239 (Board_t2083606692 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Transform UnityEngine.GameObject::get_transform()
 extern "C"  Transform_t3275118058 * GameObject_get_transform_m3490276752 (GameObject_t1756533147 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.Vector3 UnityEngine.Transform::get_position()
+extern "C"  Vector3_t2243707580  Transform_get_position_m2304215762 (Transform_t3275118058 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void Board::newBoard()
+extern "C"  void Board_newBoard_m3991470239 (Board_t2083606692 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Transform UnityEngine.Transform::Find(System.String)
 extern "C"  Transform_t3275118058 * Transform_Find_m2140075701 (Transform_t3275118058 * __this, String_t* p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.GameObject UnityEngine.Component::get_gameObject()
 extern "C"  GameObject_t1756533147 * Component_get_gameObject_m2159020946 (Component_t3819376471 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GameObject::SetActive(System.Boolean)
 extern "C"  void GameObject_SetActive_m2693135142 (GameObject_t1756533147 * __this, bool p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+extern "C"  bool Object_op_Inequality_m3768854296 (RuntimeObject * __this /* static, unused */, Object_t1021602117 * p0, Object_t1021602117 * p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3)
+extern "C"  void Transform_set_position_m2942701431 (Transform_t3275118058 * __this, Vector3_t2243707580  p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1599,7 +1628,7 @@ extern "C"  void Board__ctor_m3005063621 (Board_t2083606692 * __this, int32_t __
 	{
 		Stack_t1043988394 * L_0 = (Stack_t1043988394 *)il2cpp_codegen_object_new(Stack_t1043988394_il2cpp_TypeInfo_var);
 		Stack__ctor_m521896492(L_0, /*hidden argument*/NULL);
-		__this->set_visitedTiles_6(L_0);
+		__this->set_visitedTiles_5(L_0);
 		Object__ctor_m2551263788(__this, /*hidden argument*/NULL);
 		int32_t L_1 = ___width0;
 		__this->set_width_0(L_1);
@@ -1609,7 +1638,7 @@ extern "C"  void Board__ctor_m3005063621 (Board_t2083606692 * __this, int32_t __
 		int32_t L_4 = ___height1;
 		il2cpp_array_size_t L_6[] = { (il2cpp_array_size_t)L_3, (il2cpp_array_size_t)L_4 };
 		TileU5B0___U2C0___U5D_t1358904254* L_5 = (TileU5B0___U2C0___U5D_t1358904254*)GenArrayNew(TileU5B0___U2C0___U5D_t1358904254_il2cpp_TypeInfo_var, L_6);
-		__this->set_tileContainer_5((TileU5B0___U2C0___U5D_t1358904254*)L_5);
+		__this->set_tileContainer_4((TileU5B0___U2C0___U5D_t1358904254*)L_5);
 		V_0 = 0;
 		goto IL_005d;
 	}
@@ -1622,7 +1651,7 @@ IL_0033:
 
 IL_003a:
 	{
-		TileU5B0___U2C0___U5D_t1358904254* L_7 = __this->get_tileContainer_5();
+		TileU5B0___U2C0___U5D_t1358904254* L_7 = __this->get_tileContainer_4();
 		int32_t L_8 = V_1;
 		int32_t L_9 = V_0;
 		int32_t L_10 = V_1;
@@ -1681,7 +1710,7 @@ extern "C"  int32_t Board_get_Height_m288727033 (Board_t2083606692 * __this, con
 extern "C"  Tile_t2729441780 * Board_getTileAt_m2811792525 (Board_t2083606692 * __this, int32_t ___x0, int32_t ___z1, const RuntimeMethod* method)
 {
 	{
-		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_5();
+		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_4();
 		int32_t L_1 = ___x0;
 		int32_t L_2 = ___z1;
 		Tile_t2729441780 * L_3 = ((TileU5B0___U2C0___U5D_t1358904254*)(TileU5B0___U2C0___U5D_t1358904254*)L_0)->GetAtUnchecked(L_1, L_2);
@@ -1698,7 +1727,7 @@ extern "C"  void Board_newBoard_m3991470239 (Board_t2083606692 * __this, const R
 	int32_t V_4 = 0;
 	int32_t V_5 = 0;
 	{
-		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_5();
+		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_4();
 		V_1 = (TileU5B0___U2C0___U5D_t1358904254*)L_0;
 		TileU5B0___U2C0___U5D_t1358904254* L_1 = V_1;
 		int32_t L_2 = Array_GetLength_m2083296647((RuntimeArray *)(RuntimeArray *)L_1, 0, /*hidden argument*/NULL);
@@ -1761,8 +1790,6 @@ IL_004c:
 		__this->set_currentTile_3(L_18);
 		Tile_t2729441780 * L_19 = __this->get_currentTile_3();
 		Tile_setCurrentTile_m1175752135(L_19, (bool)1, /*hidden argument*/NULL);
-		Tile_t2729441780 * L_20 = __this->get_startingTile_2();
-		__this->set_previousTile_4(L_20);
 		Board_setTileNeighbours_m1395458779(__this, /*hidden argument*/NULL);
 		Board_createBoard_m675199575(__this, /*hidden argument*/NULL);
 		return;
@@ -1797,7 +1824,7 @@ IL_0005:
 	{
 		Tile_t2729441780 * L_2 = __this->get_currentTile_3();
 		Tile_setVisitedTile_m2247861316(L_2, (bool)1, /*hidden argument*/NULL);
-		Stack_t1043988394 * L_3 = __this->get_visitedTiles_6();
+		Stack_t1043988394 * L_3 = __this->get_visitedTiles_5();
 		Tile_t2729441780 * L_4 = V_0;
 		VirtActionInvoker1< RuntimeObject * >::Invoke(19 /* System.Void System.Collections.Stack::Push(System.Object) */, L_3, L_4);
 		Tile_t2729441780 * L_5 = __this->get_currentTile_3();
@@ -1877,7 +1904,7 @@ IL_00d8:
 	{
 		Tile_t2729441780 * L_26 = __this->get_currentTile_3();
 		Tile_setVisitedTile_m2247861316(L_26, (bool)1, /*hidden argument*/NULL);
-		Stack_t1043988394 * L_27 = __this->get_visitedTiles_6();
+		Stack_t1043988394 * L_27 = __this->get_visitedTiles_5();
 		int32_t L_28 = VirtFuncInvoker0< int32_t >::Invoke(10 /* System.Int32 System.Collections.Stack::get_Count() */, L_27);
 		if (L_28)
 		{
@@ -1885,13 +1912,13 @@ IL_00d8:
 		}
 	}
 	{
-		__this->set_isMapCreated_7((bool)1);
+		__this->set_isMapCreated_6((bool)1);
 		return;
 	}
 
 IL_00fc:
 	{
-		Stack_t1043988394 * L_29 = __this->get_visitedTiles_6();
+		Stack_t1043988394 * L_29 = __this->get_visitedTiles_5();
 		RuntimeObject * L_30 = VirtFuncInvoker0< RuntimeObject * >::Invoke(18 /* System.Object System.Collections.Stack::Pop() */, L_29);
 		__this->set_currentTile_3(((Tile_t2729441780 *)IsInstClass((RuntimeObject*)L_30, Tile_t2729441780_il2cpp_TypeInfo_var)));
 		Tile_t2729441780 * L_31 = __this->get_currentTile_3();
@@ -1900,7 +1927,7 @@ IL_00fc:
 
 IL_011e:
 	{
-		bool L_32 = __this->get_isMapCreated_7();
+		bool L_32 = __this->get_isMapCreated_6();
 		if (!L_32)
 		{
 			goto IL_0005;
@@ -2058,7 +2085,7 @@ extern "C"  void Board_setTileNeighbours_m1395458779 (Board_t2083606692 * __this
 	int32_t V_4 = 0;
 	int32_t V_5 = 0;
 	{
-		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_5();
+		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileContainer_4();
 		V_1 = (TileU5B0___U2C0___U5D_t1358904254*)L_0;
 		TileU5B0___U2C0___U5D_t1358904254* L_1 = V_1;
 		int32_t L_2 = Array_GetLength_m2083296647((RuntimeArray *)(RuntimeArray *)L_1, 0, /*hidden argument*/NULL);
@@ -2211,6 +2238,10 @@ extern "C"  void BoardController_Start_m2403867529 (BoardController_t3713948888 
 	}
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
+	Vector3_t2243707580  V_2;
+	memset(&V_2, 0, sizeof(V_2));
+	Vector3_t2243707580  V_3;
+	memset(&V_3, 0, sizeof(V_3));
 	{
 		Board_t2083606692 * L_0 = (Board_t2083606692 *)il2cpp_codegen_object_new(Board_t2083606692_il2cpp_TypeInfo_var);
 		Board__ctor_m3005063621(L_0, ((int32_t)20), ((int32_t)20), /*hidden argument*/NULL);
@@ -2221,27 +2252,27 @@ extern "C"  void BoardController_Start_m2403867529 (BoardController_t3713948888 
 		int32_t L_4 = Board_get_Height_m288727033(L_3, /*hidden argument*/NULL);
 		il2cpp_array_size_t L_6[] = { (il2cpp_array_size_t)L_2, (il2cpp_array_size_t)L_4 };
 		GameObjectU5B0___U2C0___U5D_t3057952155* L_5 = (GameObjectU5B0___U2C0___U5D_t3057952155*)GenArrayNew(GameObjectU5B0___U2C0___U5D_t3057952155_il2cpp_TypeInfo_var, L_6);
-		__this->set_goContainer_5((GameObjectU5B0___U2C0___U5D_t3057952155*)L_5);
+		__this->set_goContainer_8((GameObjectU5B0___U2C0___U5D_t3057952155*)L_5);
 		Board_t2083606692 * L_7 = __this->get_board_2();
 		int32_t L_8 = Board_get_Width_m3164047574(L_7, /*hidden argument*/NULL);
 		Board_t2083606692 * L_9 = __this->get_board_2();
 		int32_t L_10 = Board_get_Height_m288727033(L_9, /*hidden argument*/NULL);
 		il2cpp_array_size_t L_12[] = { (il2cpp_array_size_t)L_8, (il2cpp_array_size_t)L_10 };
 		TileU5B0___U2C0___U5D_t1358904254* L_11 = (TileU5B0___U2C0___U5D_t1358904254*)GenArrayNew(TileU5B0___U2C0___U5D_t1358904254_il2cpp_TypeInfo_var, L_12);
-		__this->set_tileData_6((TileU5B0___U2C0___U5D_t1358904254*)L_11);
+		__this->set_tileData_9((TileU5B0___U2C0___U5D_t1358904254*)L_11);
 		V_0 = 0;
-		goto IL_0102;
+		goto IL_010e;
 	}
 
 IL_0058:
 	{
 		V_1 = 0;
-		goto IL_00ed;
+		goto IL_00f9;
 	}
 
 IL_005f:
 	{
-		GameObjectU5B0___U2C0___U5D_t3057952155* L_13 = __this->get_goContainer_5();
+		GameObjectU5B0___U2C0___U5D_t3057952155* L_13 = __this->get_goContainer_8();
 		int32_t L_14 = V_1;
 		int32_t L_15 = V_0;
 		GameObject_t1756533147 * L_16 = __this->get_tileGO_3();
@@ -2249,14 +2280,14 @@ IL_005f:
 		int32_t L_18 = V_0;
 		Vector3_t2243707580  L_19;
 		memset(&L_19, 0, sizeof(L_19));
-		Vector3__ctor_m1555724485((&L_19), (((float)((float)L_17))), (-0.5f), (((float)((float)L_18))), /*hidden argument*/NULL);
+		Vector3__ctor_m1555724485((&L_19), ((float)((float)(((float)((float)L_17)))*(float)(2.0f))), (0.0f), ((float)((float)(((float)((float)L_18)))*(float)(2.0f))), /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Quaternion_t4030073918_il2cpp_TypeInfo_var);
 		Quaternion_t4030073918  L_20 = Quaternion_get_identity_m443011477(NULL /*static, unused*/, /*hidden argument*/NULL);
 		Transform_t3275118058 * L_21 = Component_get_transform_m3374354972(__this, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
 		GameObject_t1756533147 * L_22 = Object_Instantiate_TisGameObject_t1756533147_m351711267(NULL /*static, unused*/, L_16, L_19, L_20, L_21, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m351711267_RuntimeMethod_var);
 		((GameObjectU5B0___U2C0___U5D_t3057952155*)(GameObjectU5B0___U2C0___U5D_t3057952155*)L_13)->SetAtUnchecked(L_14, L_15, L_22);
-		GameObjectU5B0___U2C0___U5D_t3057952155* L_23 = __this->get_goContainer_5();
+		GameObjectU5B0___U2C0___U5D_t3057952155* L_23 = __this->get_goContainer_8();
 		int32_t L_24 = V_1;
 		int32_t L_25 = V_0;
 		GameObject_t1756533147 * L_26 = ((GameObjectU5B0___U2C0___U5D_t3057952155*)(GameObjectU5B0___U2C0___U5D_t3057952155*)L_23)->GetAtUnchecked(L_24, L_25);
@@ -2281,7 +2312,7 @@ IL_005f:
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_37 = String_Concat_m3881798623(NULL /*static, unused*/, L_33, /*hidden argument*/NULL);
 		Object_set_name_m1458854879(L_26, L_37, /*hidden argument*/NULL);
-		TileU5B0___U2C0___U5D_t1358904254* L_38 = __this->get_tileData_6();
+		TileU5B0___U2C0___U5D_t1358904254* L_38 = __this->get_tileData_9();
 		int32_t L_39 = V_1;
 		int32_t L_40 = V_0;
 		Board_t2083606692 * L_41 = __this->get_board_2();
@@ -2293,7 +2324,7 @@ IL_005f:
 		V_1 = ((int32_t)((int32_t)L_45+(int32_t)1));
 	}
 
-IL_00ed:
+IL_00f9:
 	{
 		int32_t L_46 = V_1;
 		Board_t2083606692 * L_47 = __this->get_board_2();
@@ -2308,7 +2339,7 @@ IL_00ed:
 		V_0 = ((int32_t)((int32_t)L_49+(int32_t)1));
 	}
 
-IL_0102:
+IL_010e:
 	{
 		int32_t L_50 = V_0;
 		Board_t2083606692 * L_51 = __this->get_board_2();
@@ -2319,16 +2350,34 @@ IL_0102:
 		}
 	}
 	{
-		GameObject_t1756533147 * L_53 = __this->get_playerGO_4();
+		GameObject_t1756533147 * L_53 = __this->get_playerGOPreFab_4();
 		Vector3_t2243707580  L_54;
 		memset(&L_54, 0, sizeof(L_54));
 		Vector3__ctor_m1555724485((&L_54), (0.0f), (1.0f), (0.0f), /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Quaternion_t4030073918_il2cpp_TypeInfo_var);
 		Quaternion_t4030073918  L_55 = Quaternion_get_identity_m443011477(NULL /*static, unused*/, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
-		Object_Instantiate_TisGameObject_t1756533147_m3064851704(NULL /*static, unused*/, L_53, L_54, L_55, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3064851704_RuntimeMethod_var);
-		Board_t2083606692 * L_56 = __this->get_board_2();
-		Board_newBoard_m3991470239(L_56, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_56 = Object_Instantiate_TisGameObject_t1756533147_m3064851704(NULL /*static, unused*/, L_53, L_54, L_55, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3064851704_RuntimeMethod_var);
+		__this->set_player_6(L_56);
+		GameObject_t1756533147 * L_57 = __this->get_lightGOPreFab_5();
+		GameObject_t1756533147 * L_58 = __this->get_playerGOPreFab_4();
+		Transform_t3275118058 * L_59 = GameObject_get_transform_m3490276752(L_58, /*hidden argument*/NULL);
+		Vector3_t2243707580  L_60 = Transform_get_position_m2304215762(L_59, /*hidden argument*/NULL);
+		V_2 = L_60;
+		float L_61 = (&V_2)->get_x_1();
+		GameObject_t1756533147 * L_62 = __this->get_playerGOPreFab_4();
+		Transform_t3275118058 * L_63 = GameObject_get_transform_m3490276752(L_62, /*hidden argument*/NULL);
+		Vector3_t2243707580  L_64 = Transform_get_position_m2304215762(L_63, /*hidden argument*/NULL);
+		V_3 = L_64;
+		float L_65 = (&V_3)->get_z_3();
+		Vector3_t2243707580  L_66;
+		memset(&L_66, 0, sizeof(L_66));
+		Vector3__ctor_m1555724485((&L_66), L_61, (1.0f), L_65, /*hidden argument*/NULL);
+		Quaternion_t4030073918  L_67 = Quaternion_get_identity_m443011477(NULL /*static, unused*/, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_68 = Object_Instantiate_TisGameObject_t1756533147_m3064851704(NULL /*static, unused*/, L_57, L_66, L_67, /*hidden argument*/Object_Instantiate_TisGameObject_t1756533147_m3064851704_RuntimeMethod_var);
+		__this->set_light_7(L_68);
+		Board_t2083606692 * L_69 = __this->get_board_2();
+		Board_newBoard_m3991470239(L_69, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -2345,86 +2394,127 @@ extern "C"  void BoardController_Update_m224668774 (BoardController_t3713948888 
 	int32_t V_1 = 0;
 	Tile_t2729441780 * V_2 = NULL;
 	GameObject_t1756533147 * V_3 = NULL;
+	Vector3_t2243707580  V_4;
+	memset(&V_4, 0, sizeof(V_4));
+	Vector3_t2243707580  V_5;
+	memset(&V_5, 0, sizeof(V_5));
 	{
 		V_0 = 0;
-		goto IL_00c3;
+		goto IL_00ff;
 	}
 
 IL_0007:
 	{
 		V_1 = 0;
-		goto IL_00ae;
+		goto IL_00ea;
 	}
 
 IL_000e:
 	{
-		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileData_6();
+		TileU5B0___U2C0___U5D_t1358904254* L_0 = __this->get_tileData_9();
 		int32_t L_1 = V_1;
 		int32_t L_2 = V_0;
 		Tile_t2729441780 * L_3 = ((TileU5B0___U2C0___U5D_t1358904254*)(TileU5B0___U2C0___U5D_t1358904254*)L_0)->GetAtUnchecked(L_1, L_2);
 		V_2 = L_3;
-		GameObjectU5B0___U2C0___U5D_t3057952155* L_4 = __this->get_goContainer_5();
+		GameObjectU5B0___U2C0___U5D_t3057952155* L_4 = __this->get_goContainer_8();
 		int32_t L_5 = V_1;
 		int32_t L_6 = V_0;
 		GameObject_t1756533147 * L_7 = ((GameObjectU5B0___U2C0___U5D_t3057952155*)(GameObjectU5B0___U2C0___U5D_t3057952155*)L_4)->GetAtUnchecked(L_5, L_6);
 		V_3 = L_7;
 		GameObject_t1756533147 * L_8 = V_3;
 		Transform_t3275118058 * L_9 = GameObject_get_transform_m3490276752(L_8, /*hidden argument*/NULL);
-		Transform_t3275118058 * L_10 = Transform_Find_m2140075701(L_9, _stringLiteral1625084853, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_11 = Component_get_gameObject_m2159020946(L_10, /*hidden argument*/NULL);
-		Tile_t2729441780 * L_12 = V_2;
-		bool L_13 = L_12->get_hasNorthWall_6();
-		GameObject_SetActive_m2693135142(L_11, L_13, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_14 = V_3;
-		Transform_t3275118058 * L_15 = GameObject_get_transform_m3490276752(L_14, /*hidden argument*/NULL);
-		Transform_t3275118058 * L_16 = Transform_Find_m2140075701(L_15, _stringLiteral217700537, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_17 = Component_get_gameObject_m2159020946(L_16, /*hidden argument*/NULL);
-		Tile_t2729441780 * L_18 = V_2;
-		bool L_19 = L_18->get_hasEastWall_7();
-		GameObject_SetActive_m2693135142(L_17, L_19, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_20 = V_3;
-		Transform_t3275118058 * L_21 = GameObject_get_transform_m3490276752(L_20, /*hidden argument*/NULL);
-		Transform_t3275118058 * L_22 = Transform_Find_m2140075701(L_21, _stringLiteral1639333311, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_23 = Component_get_gameObject_m2159020946(L_22, /*hidden argument*/NULL);
-		Tile_t2729441780 * L_24 = V_2;
-		bool L_25 = L_24->get_hasSouthWall_8();
-		GameObject_SetActive_m2693135142(L_23, L_25, /*hidden argument*/NULL);
-		GameObject_t1756533147 * L_26 = V_3;
-		Transform_t3275118058 * L_27 = GameObject_get_transform_m3490276752(L_26, /*hidden argument*/NULL);
-		Transform_t3275118058 * L_28 = Transform_Find_m2140075701(L_27, _stringLiteral2758309879, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_10 = Transform_Find_m2140075701(L_9, _stringLiteral2126706964, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_11 = Component_get_transform_m3374354972(L_10, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_12 = Transform_Find_m2140075701(L_11, _stringLiteral1625084853, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_13 = Component_get_gameObject_m2159020946(L_12, /*hidden argument*/NULL);
+		Tile_t2729441780 * L_14 = V_2;
+		bool L_15 = L_14->get_hasNorthWall_6();
+		GameObject_SetActive_m2693135142(L_13, L_15, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_16 = V_3;
+		Transform_t3275118058 * L_17 = GameObject_get_transform_m3490276752(L_16, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_18 = Transform_Find_m2140075701(L_17, _stringLiteral2126706964, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_19 = Component_get_transform_m3374354972(L_18, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_20 = Transform_Find_m2140075701(L_19, _stringLiteral217700537, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_21 = Component_get_gameObject_m2159020946(L_20, /*hidden argument*/NULL);
+		Tile_t2729441780 * L_22 = V_2;
+		bool L_23 = L_22->get_hasEastWall_7();
+		GameObject_SetActive_m2693135142(L_21, L_23, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_24 = V_3;
+		Transform_t3275118058 * L_25 = GameObject_get_transform_m3490276752(L_24, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_26 = Transform_Find_m2140075701(L_25, _stringLiteral2126706964, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_27 = Component_get_transform_m3374354972(L_26, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_28 = Transform_Find_m2140075701(L_27, _stringLiteral1639333311, /*hidden argument*/NULL);
 		GameObject_t1756533147 * L_29 = Component_get_gameObject_m2159020946(L_28, /*hidden argument*/NULL);
 		Tile_t2729441780 * L_30 = V_2;
-		bool L_31 = L_30->get_hasWestWall_9();
+		bool L_31 = L_30->get_hasSouthWall_8();
 		GameObject_SetActive_m2693135142(L_29, L_31, /*hidden argument*/NULL);
-		int32_t L_32 = V_1;
-		V_1 = ((int32_t)((int32_t)L_32+(int32_t)1));
+		GameObject_t1756533147 * L_32 = V_3;
+		Transform_t3275118058 * L_33 = GameObject_get_transform_m3490276752(L_32, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_34 = Transform_Find_m2140075701(L_33, _stringLiteral2126706964, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_35 = Component_get_transform_m3374354972(L_34, /*hidden argument*/NULL);
+		Transform_t3275118058 * L_36 = Transform_Find_m2140075701(L_35, _stringLiteral2758309879, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_37 = Component_get_gameObject_m2159020946(L_36, /*hidden argument*/NULL);
+		Tile_t2729441780 * L_38 = V_2;
+		bool L_39 = L_38->get_hasWestWall_9();
+		GameObject_SetActive_m2693135142(L_37, L_39, /*hidden argument*/NULL);
+		int32_t L_40 = V_1;
+		V_1 = ((int32_t)((int32_t)L_40+(int32_t)1));
 	}
 
-IL_00ae:
+IL_00ea:
 	{
-		int32_t L_33 = V_1;
-		Board_t2083606692 * L_34 = __this->get_board_2();
-		int32_t L_35 = Board_get_Width_m3164047574(L_34, /*hidden argument*/NULL);
-		if ((((int32_t)L_33) < ((int32_t)L_35)))
+		int32_t L_41 = V_1;
+		Board_t2083606692 * L_42 = __this->get_board_2();
+		int32_t L_43 = Board_get_Width_m3164047574(L_42, /*hidden argument*/NULL);
+		if ((((int32_t)L_41) < ((int32_t)L_43)))
 		{
 			goto IL_000e;
 		}
 	}
 	{
-		int32_t L_36 = V_0;
-		V_0 = ((int32_t)((int32_t)L_36+(int32_t)1));
+		int32_t L_44 = V_0;
+		V_0 = ((int32_t)((int32_t)L_44+(int32_t)1));
 	}
 
-IL_00c3:
+IL_00ff:
 	{
-		int32_t L_37 = V_0;
-		Board_t2083606692 * L_38 = __this->get_board_2();
-		int32_t L_39 = Board_get_Height_m288727033(L_38, /*hidden argument*/NULL);
-		if ((((int32_t)L_37) < ((int32_t)L_39)))
+		int32_t L_45 = V_0;
+		Board_t2083606692 * L_46 = __this->get_board_2();
+		int32_t L_47 = Board_get_Height_m288727033(L_46, /*hidden argument*/NULL);
+		if ((((int32_t)L_45) < ((int32_t)L_47)))
 		{
 			goto IL_0007;
 		}
 	}
+	{
+		GameObject_t1756533147 * L_48 = __this->get_light_7();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t1021602117_il2cpp_TypeInfo_var);
+		bool L_49 = Object_op_Inequality_m3768854296(NULL /*static, unused*/, L_48, (Object_t1021602117 *)NULL, /*hidden argument*/NULL);
+		if (!L_49)
+		{
+			goto IL_016d;
+		}
+	}
+	{
+		GameObject_t1756533147 * L_50 = __this->get_light_7();
+		Transform_t3275118058 * L_51 = GameObject_get_transform_m3490276752(L_50, /*hidden argument*/NULL);
+		GameObject_t1756533147 * L_52 = __this->get_player_6();
+		Transform_t3275118058 * L_53 = GameObject_get_transform_m3490276752(L_52, /*hidden argument*/NULL);
+		Vector3_t2243707580  L_54 = Transform_get_position_m2304215762(L_53, /*hidden argument*/NULL);
+		V_4 = L_54;
+		float L_55 = (&V_4)->get_x_1();
+		GameObject_t1756533147 * L_56 = __this->get_player_6();
+		Transform_t3275118058 * L_57 = GameObject_get_transform_m3490276752(L_56, /*hidden argument*/NULL);
+		Vector3_t2243707580  L_58 = Transform_get_position_m2304215762(L_57, /*hidden argument*/NULL);
+		V_5 = L_58;
+		float L_59 = (&V_5)->get_z_3();
+		Vector3_t2243707580  L_60;
+		memset(&L_60, 0, sizeof(L_60));
+		Vector3__ctor_m1555724485((&L_60), L_55, (1.0f), L_59, /*hidden argument*/NULL);
+		Transform_set_position_m2942701431(L_51, L_60, /*hidden argument*/NULL);
+	}
+
+IL_016d:
 	{
 		return;
 	}

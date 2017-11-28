@@ -11,7 +11,13 @@ public class BoardController : MonoBehaviour {
 	public GameObject tileGO;
 
 	// Get reference to the player prefab
-	public GameObject playerGO;
+	public GameObject playerGOPreFab;
+
+	// Get reference to light prefab
+	public GameObject lightGOPreFab;
+
+	GameObject player;
+	GameObject light;
 
 	// Array of gameobjects for each tile
 	GameObject[,] goContainer;
@@ -26,7 +32,7 @@ public class BoardController : MonoBehaviour {
 		for (int z = 0; z < board.Height; z++) {
 			for (int x = 0; x < board.Width; x++) {
 				goContainer[x,z] = Instantiate (tileGO,
-												new Vector3 (x, -0.5f, z),
+												new Vector3 (x * 2f, 0, z * 2f),
 												Quaternion.identity,
 												this.transform) 
 												as GameObject;
@@ -36,7 +42,8 @@ public class BoardController : MonoBehaviour {
 			}
 		}
 
-		Instantiate (playerGO, new Vector3(0, 1, 0), Quaternion.identity);
+		player = Instantiate (playerGOPreFab, new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
+		light = Instantiate (lightGOPreFab, new Vector3(playerGOPreFab.transform.position.x, 1, playerGOPreFab.transform.position.z), Quaternion.identity) as GameObject;
 
 		board.newBoard ();
 	}
@@ -48,11 +55,15 @@ public class BoardController : MonoBehaviour {
 				Tile tile = tileData [x, z];
 				GameObject go = goContainer [x, z];
 
-				go.transform.Find ("NorthWall").gameObject.SetActive (tile.hasNorthWall);
-				go.transform.Find ("EastWall").gameObject.SetActive (tile.hasEastWall);
-				go.transform.Find ("SouthWall").gameObject.SetActive (tile.hasSouthWall);
-				go.transform.Find ("WestWall").gameObject.SetActive (tile.hasWestWall);
+				go.transform.Find("Unit").transform.Find ("NorthWall").gameObject.SetActive (tile.hasNorthWall);
+				go.transform.Find("Unit").transform.Find ("EastWall").gameObject.SetActive (tile.hasEastWall);
+				go.transform.Find("Unit").transform.Find ("SouthWall").gameObject.SetActive (tile.hasSouthWall);
+				go.transform.Find("Unit").transform.Find ("WestWall").gameObject.SetActive (tile.hasWestWall);
 			}
+		}
+
+		if (light != null) {
+			light.transform.position = new Vector3 (player.transform.position.x, 1, player.transform.position.z);
 		}
 	}
 }

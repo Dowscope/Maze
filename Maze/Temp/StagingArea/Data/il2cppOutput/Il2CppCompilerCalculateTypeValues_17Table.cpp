@@ -1221,14 +1221,12 @@ public:
 	Tile_t2729441780 * ___startingTile_2;
 	// Tile Board::currentTile
 	Tile_t2729441780 * ___currentTile_3;
-	// Tile Board::previousTile
-	Tile_t2729441780 * ___previousTile_4;
 	// Tile[0...,0...] Board::tileContainer
-	TileU5B0___U2C0___U5D_t1358904254* ___tileContainer_5;
+	TileU5B0___U2C0___U5D_t1358904254* ___tileContainer_4;
 	// System.Collections.Stack Board::visitedTiles
-	Stack_t1043988394 * ___visitedTiles_6;
+	Stack_t1043988394 * ___visitedTiles_5;
 	// System.Boolean Board::isMapCreated
-	bool ___isMapCreated_7;
+	bool ___isMapCreated_6;
 
 public:
 	inline static int32_t get_offset_of_width_0() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___width_0)); }
@@ -1265,39 +1263,30 @@ public:
 		Il2CppCodeGenWriteBarrier((&___currentTile_3), value);
 	}
 
-	inline static int32_t get_offset_of_previousTile_4() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___previousTile_4)); }
-	inline Tile_t2729441780 * get_previousTile_4() const { return ___previousTile_4; }
-	inline Tile_t2729441780 ** get_address_of_previousTile_4() { return &___previousTile_4; }
-	inline void set_previousTile_4(Tile_t2729441780 * value)
+	inline static int32_t get_offset_of_tileContainer_4() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___tileContainer_4)); }
+	inline TileU5B0___U2C0___U5D_t1358904254* get_tileContainer_4() const { return ___tileContainer_4; }
+	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileContainer_4() { return &___tileContainer_4; }
+	inline void set_tileContainer_4(TileU5B0___U2C0___U5D_t1358904254* value)
 	{
-		___previousTile_4 = value;
-		Il2CppCodeGenWriteBarrier((&___previousTile_4), value);
+		___tileContainer_4 = value;
+		Il2CppCodeGenWriteBarrier((&___tileContainer_4), value);
 	}
 
-	inline static int32_t get_offset_of_tileContainer_5() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___tileContainer_5)); }
-	inline TileU5B0___U2C0___U5D_t1358904254* get_tileContainer_5() const { return ___tileContainer_5; }
-	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileContainer_5() { return &___tileContainer_5; }
-	inline void set_tileContainer_5(TileU5B0___U2C0___U5D_t1358904254* value)
+	inline static int32_t get_offset_of_visitedTiles_5() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___visitedTiles_5)); }
+	inline Stack_t1043988394 * get_visitedTiles_5() const { return ___visitedTiles_5; }
+	inline Stack_t1043988394 ** get_address_of_visitedTiles_5() { return &___visitedTiles_5; }
+	inline void set_visitedTiles_5(Stack_t1043988394 * value)
 	{
-		___tileContainer_5 = value;
-		Il2CppCodeGenWriteBarrier((&___tileContainer_5), value);
+		___visitedTiles_5 = value;
+		Il2CppCodeGenWriteBarrier((&___visitedTiles_5), value);
 	}
 
-	inline static int32_t get_offset_of_visitedTiles_6() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___visitedTiles_6)); }
-	inline Stack_t1043988394 * get_visitedTiles_6() const { return ___visitedTiles_6; }
-	inline Stack_t1043988394 ** get_address_of_visitedTiles_6() { return &___visitedTiles_6; }
-	inline void set_visitedTiles_6(Stack_t1043988394 * value)
+	inline static int32_t get_offset_of_isMapCreated_6() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___isMapCreated_6)); }
+	inline bool get_isMapCreated_6() const { return ___isMapCreated_6; }
+	inline bool* get_address_of_isMapCreated_6() { return &___isMapCreated_6; }
+	inline void set_isMapCreated_6(bool value)
 	{
-		___visitedTiles_6 = value;
-		Il2CppCodeGenWriteBarrier((&___visitedTiles_6), value);
-	}
-
-	inline static int32_t get_offset_of_isMapCreated_7() { return static_cast<int32_t>(offsetof(Board_t2083606692, ___isMapCreated_7)); }
-	inline bool get_isMapCreated_7() const { return ___isMapCreated_7; }
-	inline bool* get_address_of_isMapCreated_7() { return &___isMapCreated_7; }
-	inline void set_isMapCreated_7(bool value)
-	{
-		___isMapCreated_7 = value;
+		___isMapCreated_6 = value;
 	}
 };
 
@@ -4719,12 +4708,18 @@ public:
 	Board_t2083606692 * ___board_2;
 	// UnityEngine.GameObject BoardController::tileGO
 	GameObject_t1756533147 * ___tileGO_3;
-	// UnityEngine.GameObject BoardController::playerGO
-	GameObject_t1756533147 * ___playerGO_4;
+	// UnityEngine.GameObject BoardController::playerGOPreFab
+	GameObject_t1756533147 * ___playerGOPreFab_4;
+	// UnityEngine.GameObject BoardController::lightGOPreFab
+	GameObject_t1756533147 * ___lightGOPreFab_5;
+	// UnityEngine.GameObject BoardController::player
+	GameObject_t1756533147 * ___player_6;
+	// UnityEngine.GameObject BoardController::light
+	GameObject_t1756533147 * ___light_7;
 	// UnityEngine.GameObject[0...,0...] BoardController::goContainer
-	GameObjectU5B0___U2C0___U5D_t3057952155* ___goContainer_5;
+	GameObjectU5B0___U2C0___U5D_t3057952155* ___goContainer_8;
 	// Tile[0...,0...] BoardController::tileData
-	TileU5B0___U2C0___U5D_t1358904254* ___tileData_6;
+	TileU5B0___U2C0___U5D_t1358904254* ___tileData_9;
 
 public:
 	inline static int32_t get_offset_of_board_2() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___board_2)); }
@@ -4745,31 +4740,58 @@ public:
 		Il2CppCodeGenWriteBarrier((&___tileGO_3), value);
 	}
 
-	inline static int32_t get_offset_of_playerGO_4() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___playerGO_4)); }
-	inline GameObject_t1756533147 * get_playerGO_4() const { return ___playerGO_4; }
-	inline GameObject_t1756533147 ** get_address_of_playerGO_4() { return &___playerGO_4; }
-	inline void set_playerGO_4(GameObject_t1756533147 * value)
+	inline static int32_t get_offset_of_playerGOPreFab_4() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___playerGOPreFab_4)); }
+	inline GameObject_t1756533147 * get_playerGOPreFab_4() const { return ___playerGOPreFab_4; }
+	inline GameObject_t1756533147 ** get_address_of_playerGOPreFab_4() { return &___playerGOPreFab_4; }
+	inline void set_playerGOPreFab_4(GameObject_t1756533147 * value)
 	{
-		___playerGO_4 = value;
-		Il2CppCodeGenWriteBarrier((&___playerGO_4), value);
+		___playerGOPreFab_4 = value;
+		Il2CppCodeGenWriteBarrier((&___playerGOPreFab_4), value);
 	}
 
-	inline static int32_t get_offset_of_goContainer_5() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___goContainer_5)); }
-	inline GameObjectU5B0___U2C0___U5D_t3057952155* get_goContainer_5() const { return ___goContainer_5; }
-	inline GameObjectU5B0___U2C0___U5D_t3057952155** get_address_of_goContainer_5() { return &___goContainer_5; }
-	inline void set_goContainer_5(GameObjectU5B0___U2C0___U5D_t3057952155* value)
+	inline static int32_t get_offset_of_lightGOPreFab_5() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___lightGOPreFab_5)); }
+	inline GameObject_t1756533147 * get_lightGOPreFab_5() const { return ___lightGOPreFab_5; }
+	inline GameObject_t1756533147 ** get_address_of_lightGOPreFab_5() { return &___lightGOPreFab_5; }
+	inline void set_lightGOPreFab_5(GameObject_t1756533147 * value)
 	{
-		___goContainer_5 = value;
-		Il2CppCodeGenWriteBarrier((&___goContainer_5), value);
+		___lightGOPreFab_5 = value;
+		Il2CppCodeGenWriteBarrier((&___lightGOPreFab_5), value);
 	}
 
-	inline static int32_t get_offset_of_tileData_6() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___tileData_6)); }
-	inline TileU5B0___U2C0___U5D_t1358904254* get_tileData_6() const { return ___tileData_6; }
-	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileData_6() { return &___tileData_6; }
-	inline void set_tileData_6(TileU5B0___U2C0___U5D_t1358904254* value)
+	inline static int32_t get_offset_of_player_6() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___player_6)); }
+	inline GameObject_t1756533147 * get_player_6() const { return ___player_6; }
+	inline GameObject_t1756533147 ** get_address_of_player_6() { return &___player_6; }
+	inline void set_player_6(GameObject_t1756533147 * value)
 	{
-		___tileData_6 = value;
-		Il2CppCodeGenWriteBarrier((&___tileData_6), value);
+		___player_6 = value;
+		Il2CppCodeGenWriteBarrier((&___player_6), value);
+	}
+
+	inline static int32_t get_offset_of_light_7() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___light_7)); }
+	inline GameObject_t1756533147 * get_light_7() const { return ___light_7; }
+	inline GameObject_t1756533147 ** get_address_of_light_7() { return &___light_7; }
+	inline void set_light_7(GameObject_t1756533147 * value)
+	{
+		___light_7 = value;
+		Il2CppCodeGenWriteBarrier((&___light_7), value);
+	}
+
+	inline static int32_t get_offset_of_goContainer_8() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___goContainer_8)); }
+	inline GameObjectU5B0___U2C0___U5D_t3057952155* get_goContainer_8() const { return ___goContainer_8; }
+	inline GameObjectU5B0___U2C0___U5D_t3057952155** get_address_of_goContainer_8() { return &___goContainer_8; }
+	inline void set_goContainer_8(GameObjectU5B0___U2C0___U5D_t3057952155* value)
+	{
+		___goContainer_8 = value;
+		Il2CppCodeGenWriteBarrier((&___goContainer_8), value);
+	}
+
+	inline static int32_t get_offset_of_tileData_9() { return static_cast<int32_t>(offsetof(BoardController_t3713948888, ___tileData_9)); }
+	inline TileU5B0___U2C0___U5D_t1358904254* get_tileData_9() const { return ___tileData_9; }
+	inline TileU5B0___U2C0___U5D_t1358904254** get_address_of_tileData_9() { return &___tileData_9; }
+	inline void set_tileData_9(TileU5B0___U2C0___U5D_t1358904254* value)
+	{
+		___tileData_9 = value;
+		Il2CppCodeGenWriteBarrier((&___tileData_9), value);
 	}
 };
 
@@ -7263,25 +7285,27 @@ extern const int32_t g_FieldOffsetTable1747[6] =
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1748 = { sizeof (U3CModuleU3E_t3783534234), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1749 = { sizeof (Board_t2083606692), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1749[8] = 
+extern const int32_t g_FieldOffsetTable1749[7] = 
 {
 	Board_t2083606692::get_offset_of_width_0(),
 	Board_t2083606692::get_offset_of_height_1(),
 	Board_t2083606692::get_offset_of_startingTile_2(),
 	Board_t2083606692::get_offset_of_currentTile_3(),
-	Board_t2083606692::get_offset_of_previousTile_4(),
-	Board_t2083606692::get_offset_of_tileContainer_5(),
-	Board_t2083606692::get_offset_of_visitedTiles_6(),
-	Board_t2083606692::get_offset_of_isMapCreated_7(),
+	Board_t2083606692::get_offset_of_tileContainer_4(),
+	Board_t2083606692::get_offset_of_visitedTiles_5(),
+	Board_t2083606692::get_offset_of_isMapCreated_6(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1750 = { sizeof (BoardController_t3713948888), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1750[5] = 
+extern const int32_t g_FieldOffsetTable1750[8] = 
 {
 	BoardController_t3713948888::get_offset_of_board_2(),
 	BoardController_t3713948888::get_offset_of_tileGO_3(),
-	BoardController_t3713948888::get_offset_of_playerGO_4(),
-	BoardController_t3713948888::get_offset_of_goContainer_5(),
-	BoardController_t3713948888::get_offset_of_tileData_6(),
+	BoardController_t3713948888::get_offset_of_playerGOPreFab_4(),
+	BoardController_t3713948888::get_offset_of_lightGOPreFab_5(),
+	BoardController_t3713948888::get_offset_of_player_6(),
+	BoardController_t3713948888::get_offset_of_light_7(),
+	BoardController_t3713948888::get_offset_of_goContainer_8(),
+	BoardController_t3713948888::get_offset_of_tileData_9(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1751 = { sizeof (Tile_t2729441780), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable1751[14] = 
