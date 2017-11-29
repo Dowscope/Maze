@@ -16,8 +16,12 @@ public class BoardController : MonoBehaviour {
 	// Get reference to light prefab
 	public GameObject lightGOPreFab;
 
+	// Get reference to the key prefab
+	public GameObject keyPreFab;
+
 	GameObject player;
 	GameObject light;
+	GameObject key;
 
 	// Array of gameobjects for each tile
 	GameObject[,] goContainer;
@@ -46,6 +50,11 @@ public class BoardController : MonoBehaviour {
 		light = Instantiate (lightGOPreFab, new Vector3(playerGOPreFab.transform.position.x, 1, playerGOPreFab.transform.position.z), Quaternion.identity) as GameObject;
 
 		board.newBoard ();
+
+		float tmpX = Random.Range(5, board.Width);
+		float tmpZ = Random.Range (5, board.Height);
+
+		key = Instantiate (keyPreFab, new Vector3 (tmpX, 0.25f, tmpZ), Quaternion.identity);
 	}
 	
 	// Update is called once per frame

@@ -171,6 +171,7 @@ MonoBehaviour:
   playerGOPreFab: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   lightGOPreFab: {fileID: 1119321062976434, guid: 0f986fb045c364b748302351fbf2a387,
     type: 2}
+  keyPreFab: {fileID: 1152006459414998, guid: 235d1f202166741dcb79ac3d08a8764b, type: 2}
 --- !u!4 &1099774174
 Transform:
   m_ObjectHideFlags: 0
